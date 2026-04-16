@@ -3,5 +3,46 @@
   <fields>;
 }
 
+# Keep protobuf lite runtime
+-keep class com.google.protobuf.** { *; }
+-dontwarn com.google.protobuf.**
+
 # Keep rustls-platform-verifier classes for JNI
--keep, includedescriptorclasses class org.rustls.platformverifier.** { *; }
+-keep,includedescriptorclasses class org.rustls.platformverifier.** { *; }
+
+# Keep Flutter embedding
+-keep class io.flutter.** { *; }
+-keep class io.flutter.embedding.** { *; }
+-dontwarn io.flutter.embedding.**
+-keep class io.flutter.plugin.** { *; }
+
+# Keep the FFI bridge (Rust JNI bindings)
+-keep,includedescriptorclasses class ffi.** { *; }
+-keep,includedescriptorclasses class ffi.FFI { *; }
+
+# Keep all application classes
+-keep class com.carriez.flutter_hbb.RdClipboardManager { *; }
+
+# Keep Kotlin metadata needed for reflection
+-keep class kotlin.Metadata { *; }
+-keepclassmembers class **$WhenMappings { *; }
+-keepclassmembers class kotlin.Lazy { *; }
+-dontwarn kotlin.**
+
+# Keep AndroidX media classes
+-keep class androidx.media.** { *; }
+-dontwarn androidx.media.**
+
+# Keep SVG library
+-keep class com.caverock.androidsvg.** { *; }
+-dontwarn com.caverock.androidsvg.**
+
+# Keep XXPermissions
+-keep class com.hjq.permissions.** { *; }
+-dontwarn com.hjq.permissions.**
+
+# General Android rules
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
+-keepattributes Signature
+-keepattributes Exceptions
