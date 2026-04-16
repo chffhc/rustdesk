@@ -10,7 +10,7 @@
         <receiver
             android:name=".BootReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.carriez.flutter_hbb.DEBUG_BOOT_COMPLETED" />
             </intent-filter>

@@ -21,7 +21,7 @@
 -keep,includedescriptorclasses class ffi.FFI { *; }
 
 # Keep all application classes
--keep class com.carriez.flutter_hbb.** { *; }
+-keep class com.carriez.flutter_hbb.RdClipboardManager { *; }
 
 # Keep Kotlin metadata needed for reflection
 -keep class kotlin.Metadata { *; }
